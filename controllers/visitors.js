@@ -9,7 +9,7 @@ export const visitorsData = async (req, res)=>{
               console.error('Error getting MySQL connection:', err);
               return;
             }
-            connection.query(`INSERT INTO MyGuests (ip,	network, country_name, region, city, latitude, longitude, postav, visit_time) VALUES('${userData.ip}','${userData.network}','${userData.country_name}','${userData.region}','${userData.city}','${userData.latitude}','${userData.longitude}','${userData.postal}','${1}')`, (queryErr, results) => {
+            connection.query(`INSERT INTO MyGuests (ip,	network, country_name, region, city, latitude, longitude, postav, visit_time) VALUES('${userData.ip}','${userData.network}','${userData.country_name}','${userData.region}','${userData.city}','${userData.latitude}','${userData.longitude}','${userData.postal}','${new Date()}')`, (queryErr, results) => {
             connection.release();
           
               if (queryErr) {
